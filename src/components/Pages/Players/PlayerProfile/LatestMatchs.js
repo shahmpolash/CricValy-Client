@@ -83,7 +83,7 @@ const LatestMatchs = () => {
             <input hidden type="text" name="match" value='1' />
           </li>
           <li class="single-form-item">
-            <input type="text" name="date" placeholder="Date: 25/10/2023" />
+            <input type="date" name="date" />
           </li>
           <li class="single-form-item">
             <input hidden type="email" name="playerEmail" value={user?.email} />

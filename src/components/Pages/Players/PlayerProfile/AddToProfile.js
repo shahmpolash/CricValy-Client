@@ -38,7 +38,7 @@ const AddToProfile = () => {
 
     const updateLastMatch = { totalMatches, updated, totalRuns, totalWickets };
 
-    const url = `http://localhost:5000/player/${player._id}`;
+    const url = `http://localhost:5000/player-last-match/${player._id}`;
     fetch(url, {
       method: "PUT",
       headers: {

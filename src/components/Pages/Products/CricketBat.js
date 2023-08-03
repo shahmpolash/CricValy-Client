@@ -42,9 +42,9 @@ const CricketBat = () => {
                         <ul className="review-star">
                           
                         </ul>
-                        <a href="/shop" className="title product-name">
+                        
                           {product.productName}
-                        </a>
+                        
                         <span className="price">Tk. {product.productPrice}</span>
                       </div>
                       <div className="content--right">

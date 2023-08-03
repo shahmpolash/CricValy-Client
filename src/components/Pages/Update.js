@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 import './Update.css';
+import { Link } from 'react-router-dom';
 
 const Update = () => {
     const [players, setPlayers] = useState([]);
@@ -24,31 +24,31 @@ const Update = () => {
                     <li>
                         {
                             players.map(p=> p.playerEmail === user?.email &&
-                            <a href={`/total-matches/${p._id}`} className="btn btn--block btn--radius btn--size-xlarge btn--color-white btn--bg-maya-blue text-center contact-btn">Update Your Total Matches</a>
+                            <Link to={`/total-matches/${p._id}`} className="btn btn--block btn--radius btn--size-xlarge btn--color-white btn--bg-maya-blue text-center contact-btn">Update Your Total Matches</Link>
                         )}
                     </li>
                     <li>
                         {
                             players.map(p=> p.playerEmail === user?.email &&
-                            <a href={`/total-runs/${p._id}`} className="btn btn--block btn--radius btn--size-xlarge btn--color-white btn--bg-maya-blue text-center contact-btn">Update Your Total Runs</a>
+                            <Link to={`/total-runs/${p._id}`} className="btn btn--block btn--radius btn--size-xlarge btn--color-white btn--bg-maya-blue text-center contact-btn">Update Your Total Runs</Link>
                         )}
                     </li>
                     <li>
                         {
                             players.map(p=> p.playerEmail === user?.email &&
-                            <a href={`/total-wkts/${p._id}`} className="btn btn--block btn--radius btn--size-xlarge btn--color-white btn--bg-maya-blue text-center contact-btn">Update Your Total Wikts</a>
+                            <Link to={`/total-wkts/${p._id}`} className="btn btn--block btn--radius btn--size-xlarge btn--color-white btn--bg-maya-blue text-center contact-btn">Update Your Total Wikts</Link>
                         )}
                     </li>
                     <li>
                         {
                             players.map(p=> p.playerEmail === user?.email &&
-                            <a href={`/height-runs/${p._id}`} className="btn btn--block btn--radius btn--size-xlarge btn--color-white btn--bg-maya-blue text-center contact-btn">Update Your Height Runs</a>
+                            <Link to={`/height-runs/${p._id}`} className="btn btn--block btn--radius btn--size-xlarge btn--color-white btn--bg-maya-blue text-center contact-btn">Update Your Height Runs</Link>
                         )}
                     </li>
                     <li>
                         {
                             players.map(p=> p.playerEmail === user?.email &&
-                            <a href={`/height-wkts/${p._id}`} className="btn btn--block btn--radius btn--size-xlarge btn--color-white btn--bg-maya-blue text-center contact-btn">Update Your Height Wikts</a>
+                            <Link to={`/height-wkts/${p._id}`} className="btn btn--block btn--radius btn--size-xlarge btn--color-white btn--bg-maya-blue text-center contact-btn">Update Your Height Wikts</Link>
                         )}
                     </li>
                 </ul>
