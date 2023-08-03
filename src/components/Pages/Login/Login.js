@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import { useForm } from 'react-hook-form';
 import Loading from '../../../Shared/Loading';
+import './Login.css';
 
 
 const Login = () => {
@@ -39,7 +40,8 @@ const onSubmit = data => {
 
     return (
         <div class="login-section">
-            <div class="container">
+            <div class="container login-form">
+                <div>
                 <div class="login-wrapper">
                     <div class="section-content">
                         <h1 class="title">Welcome Back</h1>
@@ -63,9 +65,9 @@ const onSubmit = data => {
                         </ul>
                     </form>                  
                 </div>
-
-                <div class="create-account-text text-center">Don't have an account? <Link to='/register' class="btn--color-radical-red">Create now</Link></div>
+                <div class="create-account-text btn--color-radical-white text-center">Don't have an account? <Link to='/register' class="btn--color-radical-red">Create now</Link></div>
                 <div class="page-progress-wrapper">
+                </div>
                 </div>
             </div>
         </div>

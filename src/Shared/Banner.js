@@ -16,7 +16,7 @@ const Banner = () => {
 
 
     return (
-        <div>
+        <div className='banner-border'>
          <div className="hero-section section-gap-top-25">
           <div className="container">
             {/* Start Hero Area */}
@@ -58,7 +58,7 @@ const Banner = () => {
                             width={149}
                             height={127}
                             className="img-fluid"
-                            src="https://i.ibb.co/J39nWqK/batpng.png"
+                            src="https://i.ibb.co/kmvR5qV/cric.png"
                             alt="cover"
                           />
                           

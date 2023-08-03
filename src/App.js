@@ -39,6 +39,7 @@ import UpdateTotalWickets from './components/Pages/UpdateTotalWickets';
 import UpdateHeightRuns from './components/Pages/UpdateHeightRuns';
 import UpdateHeightWkts from './components/Pages/Videos/UpdateHeightWkts';
 import EditProfile from './components/Pages/EditProfile';
+import JoinNow from './components/Pages/JoinNow';
 
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
         <Route path='/' element ={<Home></Home>}></Route>
         <Route path='/login' element ={<Login></Login>}></Route>
         <Route path='/register' element ={<Register></Register>}></Route>
+        <Route path='/join' element ={<JoinNow></JoinNow>}></Route>
 
         <Route path='/add-academy' element ={<AddAcademy></AddAcademy>}></Route>
         <Route path='/add-district' element ={<AddDistricts></AddDistricts>}></Route>

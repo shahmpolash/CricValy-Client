@@ -14,7 +14,7 @@ const AcademyDetails = () => {
   }, []);
 
   return (
-    <div>
+    <div className="academy-info">
       <div className="hero-section section-gap-top-25">
         <div className="container">
           {/* Start Hero Area */}

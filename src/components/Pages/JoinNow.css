@@ -1,0 +1,32 @@
+
+.join-button{
+    list-style-type: none;
+}
+.join-page {
+    background-image: url("https://i.ibb.co/Y29c70m/Field.jpg");
+    height: 100vh;
+  
+    /* Make the background image cover the entire container */
+    background-size: cover;
+  
+    /* Center the background image horizontally and vertically */
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+.join{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.button-border{
+    margin-bottom: 30px;
+    background-color: black;
+    border: 2px solid rgba(34, 34, 34, 0.144);
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.button-two{
+    background-color: bisque;
+}

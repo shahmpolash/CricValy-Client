@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import Loading from '../../../Shared/Loading';
 import { useForm } from "react-hook-form";
+import './Register.css';
 
 const Register = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -34,8 +35,9 @@ const Register = () => {
     }
 
     return (
-        <div class="login-section mt-115">
-            <div class="container">
+        <div class="login-section mt-115 register-section">
+            <div class="container register-form">
+                <div>
                 <div class="login-wrapper">
                     <div class="section-content">
                         <h1 class="title">Sign Up</h1>
@@ -85,6 +87,7 @@ const Register = () => {
                 </div>
 
                 <div class="sign-account-text text-center">Already have an account? <Link to='/login' class="btn--color-radical-red">Login Now</Link></div>
+                </div>
               
             </div>
         </div>
