@@ -23,10 +23,10 @@
 .button-border{
     margin-bottom: 30px;
     background-color: black;
-    border: 2px solid rgba(34, 34, 34, 0.144);
+    border: 2px solid rgb(255, 255, 255);
     padding-left: 40px;
     padding-right: 40px;
 }
-.button-two{
-    background-color: bisque;
+.button-border:hover{
+    color: bisque !important;
 }

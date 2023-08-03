@@ -7,6 +7,7 @@ import Academies from "../Academy/Academies";
 import Cards from "./Cards";
 import HomeBanner from "./HomeBanner";
 import HomePageVideos from "../Videos/HomePageVideos";
+import CricketTraining from "../../../Shared/CricketTraining";
 
 const Home = () => {
 
@@ -15,6 +16,7 @@ const Home = () => {
       <main className="main-wrapper">
         <Banner></Banner>
         <Loading></Loading>
+        <CricketTraining></CricketTraining>
         <div className="catagories-section">
           <div className="container">
             <Cards></Cards>

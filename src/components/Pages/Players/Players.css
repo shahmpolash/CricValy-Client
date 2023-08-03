@@ -4,18 +4,31 @@
     
 }
 
-.players-bg{
-  background-color: red;
-  background-image: linear-gradient(to right,rgba(255,0,0,1), rgba(190, 100, 100, 0));
+.player-bg{
+  padding-top: 20px;
+  background-image: url("https://i.ibb.co/Y29c70m/Field.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Set the background image as fixed */
+  background-attachment: fixed;
+}
+.player{
+  background-color: #64b3f423;
+  
 }
 
 .playerName p{
-  color: rgb(95, 95, 95) !important;
+
+  color: rgb(255, 255, 255) !important;
   font-size: 12px !important;
 }
 .playerName{
+  background-color: #0f64aa;
   display: flex;
   justify-content: center;
+  border-radius: 20px;
 }
 
 .playerPic img{

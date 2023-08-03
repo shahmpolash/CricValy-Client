@@ -15,13 +15,13 @@ const Players = () => {
         <div className='player-bg container '>
             <div className="title-content">
               <h2 className="title">Players</h2>
-              <div><a href="/players"><p>View All</p></a></div>
+              <div><Link to="/players"><p>View All</p></Link></div>
             </div>
             <div className="catagories-wrapper">
               <div className="catagories-wrapper-content">
                 {
                   players.slice(0, 6).map(player=> 
-                    <div className="single-product-item product-item--style-1 product-item--bg-maya-blue playerPic">
+                    <div className="single-product-item product-item--style-1 player playerPic">
                   <Link to={`/player/${player._id}`} className="image">
                     <img
                       className="img-fluid"
