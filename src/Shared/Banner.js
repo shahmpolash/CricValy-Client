@@ -42,7 +42,7 @@ const Banner = () => {
                         <p className="title-tag">Hi</p>
                           {
                             players.map(player => player.playerEmail === user?.email &&
-                              <h1 className="title">{player.playerName}</h1>
+                              <h2 className="title">{player.playerName}</h2>
                               )
                             
                           }

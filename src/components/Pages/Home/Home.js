@@ -8,6 +8,7 @@ import Cards from "./Cards";
 import HomeBanner from "./HomeBanner";
 import HomePageVideos from "../Videos/HomePageVideos";
 import CricketTraining from "../../../Shared/CricketTraining";
+import ShoppingBanner from "../../../Shared/ShoppingBanner";
 
 const Home = () => {
 
@@ -24,6 +25,7 @@ const Home = () => {
             <Academies></Academies>
             <Players></Players>
             <HomePageVideos></HomePageVideos>
+            <ShoppingBanner></ShoppingBanner>
             <Products></Products>
           </div>
         </div>

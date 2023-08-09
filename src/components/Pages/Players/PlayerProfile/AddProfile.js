@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../../firebase.init';
 import axios from 'axios';
+import './AddProfile.css';
 
 const AddProfile = () => {
   const navigate = useNavigate();
@@ -74,6 +75,7 @@ const AddProfile = () => {
         <form onSubmit={handlePlayerProfile}>
           <ul>
             <li className='single-form-item'>
+              <lebel>Your Name</lebel>
               <input required type='text' name='playerName' placeholder='Your Name' maxLength='30' onInput='checkCharacterLimit()' />
             </li>
             <li className='single-form-item'>
@@ -86,12 +88,15 @@ const AddProfile = () => {
               <input hidden type='text' name='profileStatus' value='Pending' />
             </li>
             <li className='single-form-item'>
+            <lebel>Profile Picture</lebel>
               <input required type='file' name='playerProfileImg' placeholder='Profile Image' />
             </li>
             <li className='single-form-item'>
+            <lebel>Date of Birth</lebel>
               <input required type='date' name='dateOfBirth' placeholder='Date of Birth' />
             </li>
             <li className='single-form-item'>
+            <lebel>Player Role</lebel>
               <select required name='playerRole'>
                 <option value='Batsman'>Batsman</option>
                 <option value='Bowler'>Bowler</option>
@@ -99,24 +104,31 @@ const AddProfile = () => {
               </select>
             </li>
             <li className='single-form-item'>
+            <lebel>Team or Academy Name</lebel>
               <input required type='text' name='teamName' placeholder='Your Team or Academy Name' maxLength='30' onInput='checkCharacterLimit()' />
             </li>
             <li className='single-form-item'>
+            <lebel>Total Matches</lebel>
               <input required type='number' name='totalMatches' placeholder='Total Matches You Have Played' max='1000' onInput='checkNumberLimit()' />
             </li>
             <li className='single-form-item'>
+            <lebel>Total Runs</lebel>
               <input required type='number' name='totalRuns' placeholder='Total Runs' max='10000' onInput='checkNumberLimit()' />
             </li>
             <li className='single-form-item'>
+            <lebel>Total Wickets</lebel>
               <input required type='number' name='totalWickets' placeholder='Total Wickets' max='1000' onInput='checkNumberLimit()' />
             </li>
             <li className='single-form-item'>
+            <lebel>Height Runs</lebel>
               <input required type='number' name='heightRuns' placeholder='Height Runs' max='300' onInput='checkNumberLimit()' />
             </li>
             <li className='single-form-item'>
+            <lebel>Height Wickets</lebel>
               <input required type='number' name='heightWickets' placeholder='Height Wickets' max='9' />
             </li>
             <li className='single-form-item'>
+            <lebel>About Yourself</lebel>
               <textarea required type='text' name='aboutPlayer' placeholder='Write About You' maxLength='100' onInput='checkCharacterLimit()' />
             </li>
             <li className='single-form-item'>

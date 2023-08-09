@@ -7,6 +7,10 @@ import auth from "../firebase.init";
 import "./Header.css";
 const Header = () => {
   const [players, setPlayers] = useState([]);
+  const logout = () => {
+    signOut(auth);
+  };
+
   useEffect(() => {
     fetch(`http://localhost:5000/players`)
       .then((res) => res.json())
@@ -18,7 +22,7 @@ const Header = () => {
     signOut(auth);
   };
   return (
-    <div>
+    <div className="main-header">
       <div className="header-section">
         <div className="container">
           <div className="header-area">
@@ -78,7 +82,7 @@ const Header = () => {
                     <img src="https://i.ibb.co/HCQsWNp/2-1.png" alt="" />
                   </Link>
                 </li>
-                <li className="list-item">
+                <li className="list-item profile-icon">
                   <ul className="list-child">
                     {players.map(
                       (player) =>
@@ -92,16 +96,19 @@ const Header = () => {
                             >
                               <img
                                 className="img-fluid"
-                                height={50}
-                                width={50}
+                                height={70}
+                                width={70}
                                 src={player.playerProfileImg}
                                 alt="pic"
                               />
                             </a>
+
                           </li>
                         )
                     )}
                   </ul>
+                  <div>{user ? <></> : <Link className="login-btn btn" to="/join">Join</Link>}
+                  </div>
                 </li>
               </ul>
             </div>

@@ -15,7 +15,7 @@ const Academies = () => {
     <div>
       <div className="title-content">
         <h2 className="title">Academies</h2>
-        <div><a href="/academy-list"><p>View All</p></a></div>
+        <div><Link to="/academy-list"><p>View All</p></Link></div>
       </div>
 
       <div className="academy-cards-all-cards">

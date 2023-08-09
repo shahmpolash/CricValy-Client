@@ -54,33 +54,42 @@ const AcademyDetails = () => {
           </div>
         </div>
       </div>
-      <div className="center-position"> 
-      <h1>{academy.academyName}</h1>
+      <div className="center-position academy-name">
+        <h1>{academy.academyName}</h1>
       </div>
-      <div className="practice-date">
       <div>
-        <div className="center-position">
-        <h2>{academy.academyAddress}</h2>
-        </div>
-        <div className="center-position">
-        <h2>{academy.academyPhoneNumber}</h2>
-        </div>
-      </div>
-      </div>
-      <div className="practice-date">
-      <div>
-        <div className="center-position">
-        <h2>Practice Date: {academy.practiceDate}</h2>
-        </div>
-        <div className="center-position">
-          <p>Practice Time: {academy.practiceTime}</p>
+        <div className="address-phone">
+
+          <div className="address">
+            <img src="https://i.ibb.co/jWfXQCf/map.png"></img>
+            <p>House 18, Road 13, Ground Field yaha Road. rajshahi</p>
           </div>
+
+          <div className="phone-number">
+          <img src="https://i.ibb.co/qpr5Lmq/phone-call.png"></img>
+            <p>Phone Number: <br></br>{academy.academyPhoneNumber}</p>
+          </div>
+
+          <div className="practice-time">
+          <img src="https://i.ibb.co/DfVgb7D/cricket.png"></img>
+            <p>Practice Time: <br></br>{academy.practiceTime}</p>
+          </div>
+          
+        </div>
       </div>
+      <div>
+     
       </div>
-      <div className="center-position"> 
-      <h1>About</h1>
+      <div className="academy-photos">
+        <img src={academy.academyPhotoOne}></img>
+        <img src={academy.academyPhotoTwo}></img>
+        <img src={academy.academyPhotoThree}></img>
+        <img src={academy.academyPhotoFour}></img>
       </div>
-      <div className="center-position">
+      <div className="center-position about">
+        <h1>About</h1>
+      </div>
+      <div className="center-position about-academy">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, voluptatum autem explicabo sint, perferendis impedit saepe, veniam provident dicta vitae voluptate repellendus labore accusantium optio nobis enim? Officiis, recusandae at.</p>
       </div>
     </div>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Videos.css";
 import { Link } from "react-router-dom";
 
-const Videos = () => {
+const AdvanceVideo = () => {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
@@ -15,18 +15,18 @@ const Videos = () => {
   return (
     <div>
       <div className="videos-banner">
-        <h2>Cricket Related Videos</h2>
+        <h2>Training For Advance Level</h2>
       </div>
-      {videos.map((video) => (
+      {
+        videos.map(video => video.videoType === 'Training' && video.VideoCategory === 'Advance' && 
         <div className="video">
-          <Link to={`/video/${video._id}`}>
-            <img className="banner" src={video.videoBanner} alt="" />
-          </Link>
-        </div>
-      )).reverse()
+        <Link to={`/video/${video._id}`}>
+          <img className="banner" src={video.videoBanner} alt="" />
+        </Link>
+      </div>)
       }
     </div>
   );
 };
 
-export default Videos;
+export default AdvanceVideo;

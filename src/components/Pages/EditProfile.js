@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
+import './EditProfile.css';
+
 
 const EditProfile = () => {
   const { id } = useParams();
   const [player, setPlayer] = useState([]);
+  const [selectedImage, setSelectedImage] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -20,12 +23,11 @@ const EditProfile = () => {
     const playerRole = event.target.playerRole.value;
     const teamName = event.target.teamName.value;
     const aboutPlayer = event.target.aboutPlayer.value;
-    const playerProfileImg = event.target.playerProfileImg.files[0]; // Access the selected file
+    const playerProfileImg = event.target.playerProfileImg.files[0];
 
-    // Upload image to Imgbb
     const formData = new FormData();
     formData.append('image', playerProfileImg);
-    formData.append('key', 'e3a766c99e397158b5668ccd3ed717ff'); // Replace this with your Imgbb API key
+    formData.append('key', 'e3a766c99e397158b5668ccd3ed717ff');
     const imgbbResponse = await axios.post('https://api.imgbb.com/1/upload', formData);
     const imageUrl = imgbbResponse.data.data.url;
 
@@ -45,10 +47,17 @@ const EditProfile = () => {
       });
   };
 
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      setSelectedImage(URL.createObjectURL(file));
+    }
+  };
+
   return (
     <div>
       <div className='update-profile'>
-        <h2>Update Your Total Runs</h2>
+        <h2>Edit Your Profile</h2>
       </div>
       <form onSubmit={handleEditProfile}>
         <ul>
@@ -59,11 +68,34 @@ const EditProfile = () => {
             <input type='date' defaultValue={player.dateOfBirth} name='dateOfBirth' id='' />
           </li>
           <li className='single-form-item'>
-            <input type='file' defaultValue={player.playerProfileImg} name='playerProfileImg' id='' />
+            <label htmlFor='playerProfileImg'>
+              <div className='preview-image-container'>
+                <div>
+                  <img
+                  src={selectedImage || player.playerProfileImg}
+                  alt='Profile'
+                  className='preview-image'
+                  style={{ maxWidth: '150px', maxHeight: '200px' }}
+                />
+                </div>
+              </div>
+            </label>
+            <input
+              type='file'
+              name='playerProfileImg'
+              id='playerProfileImg'
+              accept='image/png, image/jpeg'
+              onChange={handleImageChange}
+              style={{ display: 'none' }}
+            />
           </li>
           <li className='single-form-item'>
-            <input type='text' defaultValue={player.playerRole} name='playerRole' id='' />
-          </li>
+              <select required name='playerRole'>
+                <option value='Batsman'>Batsman</option>
+                <option value='Bowler'>Bowler</option>
+                <option value='Allrounder'>Allrounder</option>
+              </select>
+            </li>
           <li className='single-form-item'>
             <input type='text' defaultValue={player.teamName} name='teamName' id='' />
           </li>

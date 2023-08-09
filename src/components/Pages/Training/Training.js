@@ -10,7 +10,7 @@ const Training = () => {
             <div className='cricket-training'>
                 <h2>Cricket Training Videos</h2>
             </div>
-        <div className="all-cards">
+        <div className="all-cards training-page">
           <div className="training-cards">
           <>
               <div className="single-training-card">

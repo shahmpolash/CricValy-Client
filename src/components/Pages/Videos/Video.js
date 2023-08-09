@@ -13,10 +13,7 @@ const Video = () => {
     }, [id]);
     return (
         <div className="video">
-          <iframe
-            width="100%"
-            src={video.videoURL}
-          ></iframe>
+         <iframe width="100%" height="315" src={video.videoURL} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           <h4>{video.videoTitle}</h4>
         </div>
     );

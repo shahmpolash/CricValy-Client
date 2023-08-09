@@ -27,7 +27,6 @@ import AddToProfile from './components/Pages/Players/PlayerProfile/AddToProfile'
 import AddDistricts from './components/Pages/Districts/AddDistricts';
 import Districts from './components/Pages/Districts/Districts';
 import AcademyList from './components/Pages/Academy/AcademyList';
-import AddVideo from './components/Pages/Videos/AddVideo';
 import Videos from './components/Pages/Videos/Videos';
 import Video from './components/Pages/Videos/Video';
 import AllPlayers from './components/Pages/Players/AllPlayers';
@@ -40,6 +39,11 @@ import UpdateHeightRuns from './components/Pages/UpdateHeightRuns';
 import UpdateHeightWkts from './components/Pages/Videos/UpdateHeightWkts';
 import EditProfile from './components/Pages/EditProfile';
 import JoinNow from './components/Pages/JoinNow';
+import AddTrainingVideo from './components/Pages/Videos/AddTrainingVideo';
+import AddInformationVideo from './components/Pages/Videos/AddInformationVideo';
+import IntermediateVideos from './components/Pages/Videos/IntermediateVideos';
+import BegginerVideos from './components/Pages/Videos/BegginerVideos';
+import AdvanceVideo from './components/Pages/Videos/AdvanceVideo';
 
 
 function App() {
@@ -57,7 +61,8 @@ function App() {
         <Route path='/add-category' element ={<AddCategory></AddCategory>}></Route>
         <Route path='/add-product' element ={<AddProducts></AddProducts>}></Route>
         <Route path='/add-variation' element ={<ProductVariation></ProductVariation>}></Route>
-        <Route path='/add-video' element ={<AddVideo></AddVideo>}></Route>
+        <Route path='/add-training-video' element ={<AddTrainingVideo></AddTrainingVideo>}></Route>
+        <Route path='/add-information-video' element ={<AddInformationVideo></AddInformationVideo>}></Route>
 
 
         <Route path='/academy/:id' element ={<AcademyDetails></AcademyDetails>}></Route>
@@ -68,6 +73,9 @@ function App() {
         <Route path='/video/:id' element ={<Video></Video>}></Route>
         <Route path='/players' element ={<AllPlayers></AllPlayers>}></Route>
         <Route path='/training' element ={<Training></Training>}></Route>
+        <Route path='/begginer' element ={<BegginerVideos></BegginerVideos>}></Route>
+        <Route path='/intermediate' element ={<IntermediateVideos></IntermediateVideos>}></Route>
+        <Route path='/advance' element ={<AdvanceVideo></AdvanceVideo>}></Route>
 
 
         <Route path='/cart' element ={<RequireAuth><AddToCart></AddToCart></RequireAuth>}></Route>

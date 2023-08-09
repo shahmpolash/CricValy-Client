@@ -46,6 +46,66 @@
     display: flex;
     justify-content: center;
 }
-h1{
+.academy-name h1{
+    color:rgb(62, 62, 243);
     font-weight: 600;
+}
+.about h1{
+    color:rgb(62, 62, 243);
+    font-weight: 600;
+}
+.about-academy p{
+    color: rgb(24, 24, 24);
+}
+
+.phone-number{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    padding: 20px;
+    box-shadow:  rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    border-radius: 10px;
+}
+.address{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    box-shadow:  rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    border-radius: 10px;
+}
+.practice-time{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    box-shadow:  rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    border-radius: 10px;
+}
+.phone-number p{
+    font-size: 18px;
+    margin-left: 10px;
+    color: black;
+}
+.address p{
+    margin-left: 10px;
+    color: black;
+}
+.phone-number img{
+    width: 50px;
+}
+.address img{
+    width: 50px;
+}
+.practice-time img{
+    width: 50px;
+}
+.practice-time p{
+    font-size: 18px;
+    margin-left: 10px;
+    color: black;
+}
+.academy-photos img{
+    width: 100%;
+    margin-bottom: 10px;
+    border: 2px solid blue;
+    border-radius: 10px;
 }

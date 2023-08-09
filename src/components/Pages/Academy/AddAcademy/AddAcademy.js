@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const AddAcademy = () => {
   const navigate = useNavigate();
@@ -11,48 +12,72 @@ const AddAcademy = () => {
       .then((info) => setDristricts(info));
   }, []);
 
-  const handleAcademy = (event) => {
+  const uploadImageToImgBB = async (imageFile) => {
+    const formData = new FormData();
+    formData.append("image", imageFile);
+
+    const response = await axios.post("https://api.imgbb.com/1/upload", formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+      params: {
+        key: "e3a766c99e397158b5668ccd3ed717ff", // Replace with your ImgBB API key
+      },
+    });
+
+    return response.data.data.url;
+  };
+
+  const handleAcademy = async (event) => {
     event.preventDefault();
     const district = event.target.district.value;
     const academyName = event.target.academyName.value;
-    const academyCoverPhoto = event.target.academyCoverPhoto.value;
-    const academyProfilePhoto = event.target.academyProfilePhoto.value;
     const academyAddress = event.target.academyAddress.value;
     const academyPhoneNumber = event.target.academyPhoneNumber.value;
     const practiceDate = event.target.practiceDate.value;
     const practiceTime = event.target.practiceTime.value;
-    const academyPhotoOne = event.target.academyPhotoOne.value;
-    const academyPhotoTwo = event.target.academyPhotoTwo.value;
-    const academyPhotoThree = event.target.academyPhotoThree.value;
-    const academyPhotoFour = event.target.academyPhotoFour.value;
 
-    const newAcademy = {
-      district,
-      academyName,
-      academyCoverPhoto,
-      academyProfilePhoto,
-      academyAddress,
-      academyPhoneNumber,
-      practiceDate,
-      practiceTime,
-      academyPhotoOne,
-      academyPhotoTwo,
-      academyPhotoThree,
-      academyPhotoFour,
-    };
+    try {
+      const coverPhotoUrl = await uploadImageToImgBB(event.target.academyCoverPhoto.files[0]);
+      const profilePhotoUrl = await uploadImageToImgBB(event.target.academyProfilePhoto.files[0]);
+      const academyPhotoOneUrl = await uploadImageToImgBB(event.target.academyPhotoOne.files[0]);
+      const academyPhotoTwoUrl = await uploadImageToImgBB(event.target.academyPhotoTwo.files[0]);
+      const academyPhotoThreeUrl = await uploadImageToImgBB(event.target.academyPhotoThree.files[0]);
+      const academyPhotoFourUrl = await uploadImageToImgBB(event.target.academyPhotoFour.files[0]);
 
-    const url = `http://localhost:5000/academy`;
-    fetch(url, {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newAcademy),
-    })
-      .then((res) => res.json())
-      .then((result) => {
-        navigate("/");
+      const newAcademy = {
+        district,
+        academyName,
+        academyCoverPhoto: coverPhotoUrl,
+        academyProfilePhoto: profilePhotoUrl,
+        academyAddress,
+        academyPhoneNumber,
+        practiceDate,
+        practiceTime,
+        academyPhotoOne: academyPhotoOneUrl,
+        academyPhotoTwo: academyPhotoTwoUrl,
+        academyPhotoThree: academyPhotoThreeUrl,
+        academyPhotoFour: academyPhotoFourUrl,
+      };
+
+      const url = `http://localhost:5000/academy`;
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(newAcademy),
       });
+
+      if (response.ok) {
+        const result = await response.json();
+        navigate("/");
+      } else {
+        console.error("Error uploading data");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
   return (
@@ -77,8 +102,9 @@ const AddAcademy = () => {
         </li>
 
         <li class="single-form-item">
+          <lebel>Add Cover Photo</lebel>
           <input
-            type="text"
+            type="file"
             name="academyCoverPhoto"
             placeholder="Academy Cover Photo"
           ></input>{" "}
@@ -86,8 +112,9 @@ const AddAcademy = () => {
         </li>
 
         <li class="single-form-item">
+        <lebel>Add Academy Profile Photo</lebel>
           <input
-            type="text"
+            type="file"
             name="academyProfilePhoto"
             placeholder="Academy Profile Picture"
           ></input>{" "}
@@ -130,7 +157,7 @@ const AddAcademy = () => {
 
         <li class="single-form-item">
           <input
-            type="text"
+            type="file"
             name="academyPhotoOne"
             placeholder="Photo One"
           ></input>{" "}
@@ -138,7 +165,7 @@ const AddAcademy = () => {
         </li>
         <li class="single-form-item">
           <input
-            type="text"
+            type="file"
             name="academyPhotoTwo"
             placeholder="Photo Two"
           ></input>{" "}
@@ -147,7 +174,7 @@ const AddAcademy = () => {
 
         <li class="single-form-item">
           <input
-            type="text"
+            type="file"
             name="academyPhotoThree"
             placeholder="Photo Three"
           ></input>{" "}
@@ -156,18 +183,19 @@ const AddAcademy = () => {
 
         <li class="single-form-item">
           <input
-            type="text"
+            type="file"
             name="academyPhotoFour"
             placeholder="Photo Four"
           ></input>{" "}
           <br />
         </li>
-
+        <li class="single-form-item">
         <input
           className="btn btn--block btn--radius btn--size-xlarge btn--color-white btn--bg-maya-blue text-center contact-btn"
           type="submit"
           value="Add Academy"
         ></input>
+        </li>
         </ul>
         
       </form>

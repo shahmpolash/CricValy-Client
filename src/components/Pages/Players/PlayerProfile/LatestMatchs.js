@@ -83,6 +83,7 @@ const LatestMatchs = () => {
             <input hidden type="text" name="match" value='1' />
           </li>
           <li class="single-form-item">
+            <lebel>When Was Your Last Match</lebel>
             <input type="date" name="date" />
           </li>
           <li class="single-form-item">

@@ -19,10 +19,11 @@
   justify-content: center;
 }
 .academy-cards img{
+  margin: 10px;
   display: flex;
   justify-content: center;
-  width: 75px;
-  height: 70px;
+  width: 130px;
+  height: 110px;
   border-radius: 15px;
 }
 .academy-cards-single{
@@ -36,7 +37,7 @@
 }
 .academy-cards-single p{
   color:rgb(87, 87, 87);
-  font-size: 10px;
+  font-size: 12px;
 }
 .academy{
   display: flex;
