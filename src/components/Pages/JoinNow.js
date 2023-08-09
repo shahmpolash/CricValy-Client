@@ -11,7 +11,7 @@ const JoinNow = () => {
             className="btn btn--block btn--radius btn--size-xlarge btn--color-white text-center button-border"
             to="/login"
           >
-            Login Now
+            Login Now!
           </Link>
           <Link
             className="btn btn--block btn--radius btn--size-xlarge btn--color-white  text-center button-border"
@@ -24,5 +24,4 @@ const JoinNow = () => {
     </div>
   );
 };
-
 export default JoinNow;
