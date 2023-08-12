@@ -23,6 +23,7 @@ const AddTrainingVideo = () => {
     event.preventDefault();
     const videoType = event.target.videoType.value;
     const VideoCategory = event.target.VideoCategory.value;
+    const TrainingFor = event.target.TrainingFor.value;
     const videoURL = event.target.videoURL.value;
     const videoTitle = event.target.videoTitle.value;
 
@@ -33,6 +34,7 @@ const AddTrainingVideo = () => {
     const addVideo = {
       videoType,
       VideoCategory,
+      TrainingFor,
       videoURL,
       videoBanner: uploadedImageURL, // Use the uploaded image URL
       videoTitle,
@@ -71,6 +73,13 @@ const AddTrainingVideo = () => {
               <option value='Advance'>Advance</option>
             </select>
           </li>
+          <li className='single-form-item'>
+            <select required name='TrainingFor'>
+              <option value='Batting'>Batting</option>
+              <option value='Bowling'>Bowling</option>
+              <option value='Fielding'>Fielding</option>
+            </select>
+          </li>
 
           <li class="single-form-item">
             <input
@@ -105,7 +114,7 @@ const AddTrainingVideo = () => {
             <input
               className="btn btn--block btn--radius btn--size-xlarge btn--color-white btn--bg-maya-blue text-center contact-btn"
               type="submit"
-              value="Add Academy"
+              value="Add Video"
             ></input>
           </li>
         </ul>

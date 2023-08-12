@@ -44,6 +44,12 @@ import AddInformationVideo from './components/Pages/Videos/AddInformationVideo';
 import IntermediateVideos from './components/Pages/Videos/IntermediateVideos';
 import BegginerVideos from './components/Pages/Videos/BegginerVideos';
 import AdvanceVideo from './components/Pages/Videos/AdvanceVideo';
+import BattingTrainingForBegginer from './components/Pages/Videos/BattingTrainingForBegginer';
+import BattingTrainingForIntermediate from './components/Pages/Videos/BattingTrainingForIntermediate';
+import BowlingTrainingForBegginer from './components/Pages/Videos/BowlingTrainingForBegginer';
+import FieldingTrainingForBegginer from './components/Pages/Videos/FieldingTrainingForBegginer';
+import BowlingTrainingForIntermediate from './components/Pages/Videos/BowlingTrainingForIntermediate';
+import FieldingTrainingForIntermediate from './components/Pages/Videos/FieldingTrainingForIntermediate';
 
 
 function App() {
@@ -74,7 +80,13 @@ function App() {
         <Route path='/players' element ={<AllPlayers></AllPlayers>}></Route>
         <Route path='/training' element ={<Training></Training>}></Route>
         <Route path='/begginer' element ={<BegginerVideos></BegginerVideos>}></Route>
+        <Route path='/batting-begginer' element ={<BattingTrainingForBegginer></BattingTrainingForBegginer>}></Route>
+        <Route path='/bowling-begginer' element ={<BowlingTrainingForBegginer></BowlingTrainingForBegginer>}></Route>
+        <Route path='/fielding-begginer' element ={<FieldingTrainingForBegginer></FieldingTrainingForBegginer>}></Route>
         <Route path='/intermediate' element ={<IntermediateVideos></IntermediateVideos>}></Route>
+        <Route path='/batting-intermediate' element ={<BattingTrainingForIntermediate></BattingTrainingForIntermediate>}></Route>
+        <Route path='/bowling-intermediate' element ={<BowlingTrainingForIntermediate></BowlingTrainingForIntermediate>}></Route>
+        <Route path='/fielding-intermediate' element ={<FieldingTrainingForIntermediate></FieldingTrainingForIntermediate>}></Route>
         <Route path='/advance' element ={<AdvanceVideo></AdvanceVideo>}></Route>
 
 

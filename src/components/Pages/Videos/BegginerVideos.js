@@ -1,32 +1,54 @@
-import React, { useEffect, useState } from "react";
-import "./Videos.css";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import HomeBanner from '../Home/HomeBanner';
 
 const BegginerVideos = () => {
-  const [videos, setVideos] = useState([]);
-
-  useEffect(() => {
-    const url = `http://localhost:5000/videos`;
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => setVideos(data));
-  }, []);
-
-  return (
-    <div>
-      <div className="videos-banner">
-        <h2>Training For Begginer</h2>
+    return (
+        <div>
+            <HomeBanner></HomeBanner>
+            <div className='cricket-training'>
+                <h2>Cricket Training Videos</h2>
+            </div>
+        <div className="all-cards training-page">
+          <div className="training-cards">
+          <>
+              <div className="single-training-card">
+                <div className="single-card">
+                  <Link class="btn" to='/batting-begginer'>
+                    <img src="https://i.ibb.co/pvwBTrV/cricket-bat.png" alt="" />
+                  </Link>
+                </div>
+                <div className="text">
+                  <p>Batting</p>
+                </div>
+              </div>
+              <div className="single-training-card">
+                <div className="single-card">
+                  <Link class="btn" to='/bowling-begginer'>
+                    <img src="https://i.ibb.co/k2jNscK/cricket-ball.png" alt="" />
+                  </Link>
+                </div>
+                <div className="text">
+                  <p>Bowling</p>
+                </div>
+              </div>
+              <div className="single-training-card">
+                <div className="single-card">
+                  <Link class="btn" to='/fielding-begginer'>
+                    <img src="https://i.ibb.co/BwmB42m/catching.png" alt="" />
+                  </Link>
+                </div>
+                <div className="text">
+                  <p>Fielding</p>
+                </div>
+              </div>
+              
+              </>
+          
+          </div>
+        </div>
       </div>
-      {
-        videos.map(video => video.videoType === 'Training' && video.VideoCategory === 'Begginer' && 
-        <div className="video">
-        <Link to={`/video/${video._id}`}>
-          <img className="banner" src={video.videoBanner} alt="" />
-        </Link>
-      </div>)
-      }
-    </div>
-  );
+    );
 };
 
 export default BegginerVideos;
