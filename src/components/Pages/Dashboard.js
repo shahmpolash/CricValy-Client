@@ -3,12 +3,17 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
 import auth from "../../firebase.init";
 import "./Dashboard.css";
+import { signOut } from 'firebase/auth';
 
 const Dashboard = () => {
   const [user] = useAuthState(auth);
   const [players, setPlayers] = useState([]);
   const [matches, setMatches] = useState([]);
   const [orders, setOrders] = useState([]);
+  const logout = () => {
+    signOut(auth);
+  };
+
 
   useEffect(() => {
     const url = `http://localhost:5000/matches`;
@@ -284,6 +289,14 @@ const Dashboard = () => {
                     
                   }
               </table>
+
+       <div class="single-form-item">
+        <input
+          className="btn btn--block btn--radius btn--size-xlarge btn--color-white btn--bg-maya-blue text-center contact-btn"
+          type="submit"
+          value="Logout" onClick={logout}
+        ></input>
+        </div>
     </div>
   );
 };

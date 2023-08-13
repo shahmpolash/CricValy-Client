@@ -9,6 +9,8 @@ const AddProfile = () => {
   const navigate = useNavigate();
   const [user] = useAuthState(auth);
   const [players, setPlayers] = useState([]);
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [previewImage, setPreviewImage] = useState(null);
 
   useEffect(() => {
     fetch(`http://localhost:5000/players`)
@@ -69,6 +71,18 @@ const AddProfile = () => {
       });
   };
 
+  const handleImageChange = (event) => {
+    const file = event.target.files[0];
+    setSelectedImage(file);
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      setPreviewImage(e.target.result);
+    };
+    reader.readAsDataURL(file);
+  };
+  
+
   return (
     <div>
       {players.filter((player) => player.playerEmail === user?.email).length === 0 && (
@@ -88,9 +102,22 @@ const AddProfile = () => {
               <input hidden type='text' name='profileStatus' value='Pending' />
             </li>
             <li className='single-form-item'>
-            <lebel>Profile Picture</lebel>
-              <input required type='file' name='playerProfileImg' placeholder='Profile Image' />
-            </li>
+        <label>Profile Picture</label>
+        <input
+          required
+          type='file'
+          name='playerProfileImg'
+          accept='image/png, image/jpeg'
+          onChange={handleImageChange}
+        />
+        {previewImage && (
+          <img
+            src={previewImage}
+            alt='Profile Preview'
+            style={{ maxWidth: '150px', maxHeight: '200px', marginTop: '10px' }}
+          />
+        )}
+      </li>
             <li className='single-form-item'>
             <lebel>Date of Birth</lebel>
               <input required type='date' name='dateOfBirth' placeholder='Date of Birth' />
