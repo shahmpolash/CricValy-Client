@@ -68,3 +68,40 @@ justify-content: center;
       
     }
   }
+  .loading-section{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  }
+  /* Add these styles to your Players.css file */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.page-button {
+  border: 1px solid #ccc;
+  background-color: #f5f5f5;
+  color: #333;
+  padding: 5px 10px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.page-button:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.page-button.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+li{
+  list-style: none;
+}

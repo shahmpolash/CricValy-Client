@@ -5,11 +5,12 @@ import auth from "../../../../firebase.init";
 
 const LatestMatchs = () => {
   const navigate = useNavigate();
-  const {id} = useParams();
+  const { id } = useParams();
   const [user] = useAuthState(auth);
   const [players, setPlayers] = useState([]);
   const [player, setPlayer] = useState([]);
   const [matches, setMatches] = useState([]);
+  const [isLoading, setIsLoading] = useState(false); // Added loading state
 
   useEffect(() => {
     fetch(`http://localhost:5000/player/${id}`)
@@ -31,6 +32,8 @@ const LatestMatchs = () => {
 
   const handleLastmatch = (event) => {
     event.preventDefault();
+    setIsLoading(true); // Start loading state
+    
     const date = event.target.date.value;
     const match = event.target.match.value;
     const playerEmail = event.target.playerEmail.value;
@@ -68,6 +71,11 @@ const LatestMatchs = () => {
       .then((res) => res.json())
       .then((result) => {
         navigate(`/add-to-profile/${player._id}`);
+        setIsLoading(false); // End loading state
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        setIsLoading(false); // End loading state in case of an error
       });
   };
 
@@ -133,12 +141,13 @@ const LatestMatchs = () => {
           </li>
 
           <li class="single-form-item">
-            <input
-              className="btn btn--block btn--radius btn--size-xlarge btn--color-white btn--bg-maya-blue text-center contact-btn"
-              type="submit"
-              value="Save Now"
-            />
-          </li>
+                  <input
+                    className="btn btn--block btn--radius btn--size-xlarge btn--color-white btn--bg-maya-blue text-center contact-btn"
+                    type="submit"
+                    value={isLoading ? "Saving..." : "Save Now"}
+                    disabled={isLoading}
+                  />
+                </li>
         </ul>
       </form>
         </>

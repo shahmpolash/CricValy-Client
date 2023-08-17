@@ -9,6 +9,7 @@ const BuyNow = () => {
   const [product, setProduct] = useState([]);
   const navigate = useNavigate();
   const [variations, setVariations] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   
   useEffect(() => {
     const url = `http://localhost:5000/variations`;
@@ -27,6 +28,7 @@ const BuyNow = () => {
 
   const handlePlaceOrder = (event) => {
     event.preventDefault();
+    setIsLoading(true);
     const productId = event.target.productId.value;
     const orderStatus = event.target.orderStatus.value;
     const deliveryStatus = event.target.deliveryStatus.value;
@@ -56,6 +58,11 @@ const BuyNow = () => {
       .then((res) => res.json())
       .then((result) => {
         navigate("/thank-you");
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        setIsLoading(false); // End loading state in case of an error
       });
   };
 
@@ -161,6 +168,7 @@ const BuyNow = () => {
                 <li class="single-form-item">
                   <input 
                     type="number"
+                    disabled
                     value={product.productPrice}
                     name="productPrice"
                     placeholder="Price"
@@ -197,14 +205,14 @@ const BuyNow = () => {
                   <input
                     type="text"
                     name="customerName"
-                    placeholder="Your Full Name: Md Akash"
+                    placeholder="Your Full Name"
                   />
                 </li>
                 <li class="single-form-item">
                   <input
                     type="text"
                     name="customerAddress"
-                    placeholder="Address: House: 17, Road: 10"
+                    placeholder="Your Address"
                   />
                 </li>
                 <li class="single-form-item">
@@ -218,23 +226,24 @@ const BuyNow = () => {
                   <input
                     type="text"
                     name="customerDistrictName"
-                    placeholder="Districe: Khulna"
+                    placeholder="Districe"
                   />
                 </li>
                 <li class="single-form-item">
                   <input
                     type="number"
                     name="customerPhoneNumber"
-                    placeholder="Phone Number: 017000000"
+                    placeholder="Phone Number"
                   />
                 </li>
                 <li class="single-form-item">
-                  <input
-                    className="btn btn--block btn--radius btn--size-xlarge btn--color-white btn--bg-maya-blue text-center contact-btn"
-                    type="submit"
-                    value="Place Order Now"
-                  />
-                </li>
+              <input
+                className="btn btn--block btn--radius btn--size-xlarge btn--color-white btn--bg-maya-blue text-center register-space-top"
+                type="submit"
+                value={isLoading ? "Order Placing..." : "Place Order Now"}
+                disabled={isLoading}
+              />
+            </li>
               </ul>
             </form>
         </div>

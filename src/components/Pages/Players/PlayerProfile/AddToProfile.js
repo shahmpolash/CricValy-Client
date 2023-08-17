@@ -10,6 +10,7 @@ const AddToProfile = () => {
   const [user] = useAuthState(auth);
   const [player, setPlayer] = useState([]);
   const [matches, setMatches] = useState([]);
+  const [isLoading, setIsLoading] = useState(false); 
   const [totals, setTotals] = useState({
     runs: 0,
     ballFaced: 0,
@@ -31,6 +32,7 @@ const AddToProfile = () => {
 
   const handleAddToProfile = (event) => {
     event.preventDefault();
+    setIsLoading(true);
     const totalMatches = event.target.totalMatches.value;
     const updated = event.target.updated.value;
     const totalRuns = event.target.totalRuns.value;
@@ -49,7 +51,13 @@ const AddToProfile = () => {
       .then((res) => res.json())
       .then((result) => {
         navigate("/dashboard");
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        setIsLoading(false); // End loading state in case of an error
       });
+      
   };
 
   useEffect(() => {
@@ -187,12 +195,13 @@ const AddToProfile = () => {
               />
             </li>
             <li class="single-form-item">
-              <input
-                className="btn btn--block btn--radius btn--size-xlarge btn--color-white btn--bg-maya-blue text-center contact-btn"
-                type="submit"
-                value="Add this recoard to Your Profile"
-              />
-            </li>
+                  <input
+                    className="btn btn--block btn--radius btn--size-xlarge btn--color-white btn--bg-maya-blue text-center contact-btn"
+                    type="submit"
+                    value={isLoading ? "Adding..." : "Add This Record to Your Profile"}
+                    disabled={isLoading}
+                  />
+                </li>
           </ul>
         </form>
       )}
