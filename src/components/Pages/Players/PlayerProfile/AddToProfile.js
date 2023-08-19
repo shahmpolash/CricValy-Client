@@ -19,13 +19,13 @@ const AddToProfile = () => {
   });
 
   useEffect(() => {
-    fetch(`http://localhost:5000/player/${id}`)
+    fetch(`https://powerful-wave-58652-26b956be3d84.herokuapp.com/player/${id}`)
       .then((res) => res.json())
       .then((info) => setPlayer(info));
   }, [id]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/matches`)
+    fetch(`https://powerful-wave-58652-26b956be3d84.herokuapp.com/matches`)
       .then((res) => res.json())
       .then((info) => setMatches(info));
   }, []);
@@ -40,7 +40,7 @@ const AddToProfile = () => {
 
     const updateLastMatch = { totalMatches, updated, totalRuns, totalWickets };
 
-    const url = `http://localhost:5000/player-last-match/${player._id}`;
+    const url = `https://powerful-wave-58652-26b956be3d84.herokuapp.com/player-last-match/${player._id}`;
     fetch(url, {
       method: "PUT",
       headers: {

@@ -6,7 +6,7 @@ const AddProducts = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    const url = "http://localhost:5000/categories";
+    const url = "https://powerful-wave-58652-26b956be3d84.herokuapp.com/categories";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setCategories(data));
@@ -28,7 +28,7 @@ const AddProducts = () => {
       productImage,
     };
 
-    const url = `http://localhost:5000/add-product`;
+    const url = `https://powerful-wave-58652-26b956be3d84.herokuapp.com/add-product`;
     fetch(url, {
       method: "POST",
       headers: {

@@ -9,7 +9,7 @@ const AddRecord = () => {
     const [user] = useAuthState(auth);
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
-        const url = `http://localhost:5000/players/`;
+        const url = `https://powerful-wave-58652-26b956be3d84.herokuapp.com/players/`;
         fetch(url, {
             method: 'POST',
             headers: {

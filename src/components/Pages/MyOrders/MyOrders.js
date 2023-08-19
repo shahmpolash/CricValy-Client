@@ -8,7 +8,7 @@ const MyOrders = () => {
 
 
   useEffect(() => {
-    const url = 'http://localhost:5000/orders';
+    const url = 'https://powerful-wave-58652-26b956be3d84.herokuapp.com/orders';
     fetch(url)
       .then((res) => res.json())
       .then((data) => setOrders(data));

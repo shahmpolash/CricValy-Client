@@ -11,7 +11,7 @@ const EditProfile = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/player/${id}`)
+    fetch(`https://powerful-wave-58652-26b956be3d84.herokuapp.com/player/${id}`)
       .then((res) => res.json())
       .then((info) => setPlayer(info));
   }, []);
@@ -33,7 +33,7 @@ const EditProfile = () => {
 
     const updateProfile = { playerName, dateOfBirth, playerProfileImg: imageUrl, playerRole, teamName, aboutPlayer };
 
-    const url = `http://localhost:5000/edit-profile/${player._id}`;
+    const url = `https://powerful-wave-58652-26b956be3d84.herokuapp.com/edit-profile/${player._id}`;
     fetch(url, {
       method: 'PUT',
       headers: {

@@ -11,7 +11,7 @@ const AddToCart = () => {
   
   
   useEffect(() => {
-    const url = `http://localhost:5000/cart-items`;
+    const url = `https://powerful-wave-58652-26b956be3d84.herokuapp.com/cart-items`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setItems(data.filter(item => item.customerEmail === user?.email && item.placedOrder === "No")));
@@ -37,7 +37,7 @@ const AddToCart = () => {
       }))
     };
 
-    const url = `http://localhost:5000/new-order`;
+    const url = `https://powerful-wave-58652-26b956be3d84.herokuapp.com/new-order`;
     fetch(url, {
       method: "POST",
       headers: {

@@ -7,7 +7,7 @@ const AcademyDetails = () => {
   const { id } = useParams();
   const [academy, setAcademy] = useState({});
   useEffect(() => {
-    const url = `http://localhost:5000/academy/${id}`;
+    const url = `https://powerful-wave-58652-26b956be3d84.herokuapp.com/academy/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setAcademy(data));

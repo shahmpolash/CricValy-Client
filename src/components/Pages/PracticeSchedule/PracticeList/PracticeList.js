@@ -8,7 +8,7 @@ const PracticeList = () => {
     const [practices, setPractices] = useState([]);
 
     useEffect( () =>{
-        const url = `http://localhost:5000/practice?email=${user.email}`
+        const url = `https://powerful-wave-58652-26b956be3d84.herokuapp.com/practice?email=${user.email}`
         fetch(url)
         .then(res=>res.json())
         .then(data=> setPractices(data))
@@ -18,7 +18,7 @@ const PracticeList = () => {
     const handleDelete = id =>{
       const proceed = window.confirm('Are You Sure');
       if(proceed){
-        const url =`http://localhost:5000/practice/${id}`
+        const url =`https://powerful-wave-58652-26b956be3d84.herokuapp.com/practice/${id}`
         fetch(url, {
           method: 'DELETE'
         })

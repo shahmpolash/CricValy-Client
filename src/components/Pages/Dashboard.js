@@ -16,21 +16,21 @@ const Dashboard = () => {
 
 
   useEffect(() => {
-    const url = `http://localhost:5000/matches`;
+    const url = `https://powerful-wave-58652-26b956be3d84.herokuapp.com/matches`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setMatches(data));
   }, []);
 
   useEffect(() => {
-    const url = `http://localhost:5000/orders`;
+    const url = `https://powerful-wave-58652-26b956be3d84.herokuapp.com/orders`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, []);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/players`)
+    fetch(`https://powerful-wave-58652-26b956be3d84.herokuapp.com/players`)
       .then((res) => res.json())
       .then((info) => setPlayers(info));
   }, []);

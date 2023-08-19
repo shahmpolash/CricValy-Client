@@ -16,7 +16,7 @@ const SetPracticeSchedule = () => {
 
         const practiceSchedule = {email, team, datestart, dateend, time}
 
-        fetch('http://localhost:5000/practicetime', {
+        fetch('https://powerful-wave-58652-26b956be3d84.herokuapp.com/practicetime', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

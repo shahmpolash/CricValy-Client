@@ -8,14 +8,14 @@ const PlayerDetails = () => {
   const [matches, setMatches] = useState([]);
 
   useEffect(() => {
-    const url = `http://localhost:5000/player/${id}`;
+    const url = `https://powerful-wave-58652-26b956be3d84.herokuapp.com/player/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setPlayer(data));
   }, [id]);
 
   useEffect(() => {
-    const url = `http://localhost:5000/matches`;
+    const url = `https://powerful-wave-58652-26b956be3d84.herokuapp.com/matches`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setMatches(data));
@@ -39,7 +39,7 @@ const PlayerDetails = () => {
                         width={388}
                         height={160}
                         className="img-full"
-                        src="https://turfmatters.co.uk/wp-content/uploads/2020/03/Cricket-Pitch.jpg"
+                        src="https://i.ibb.co/cC5Hqt2/player-bg.jpg"
                         alt="cover"
                       />
                     </div>

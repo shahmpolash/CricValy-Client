@@ -7,7 +7,7 @@ const OrderStatus = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const url = `http://localhost:5000/order/${id}`;
+    const url = `https://powerful-wave-58652-26b956be3d84.herokuapp.com/order/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setOrder(data));
@@ -20,7 +20,7 @@ const OrderStatus = () => {
 
     const status = {orderStatus};
 
-    const url = `http://localhost:5000/order/${order._id}`;
+    const url = `https://powerful-wave-58652-26b956be3d84.herokuapp.com/order/${order._id}`;
     fetch(url, {
       method: "PUT",
       headers: {

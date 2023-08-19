@@ -9,7 +9,7 @@ const MyRecentMatchList = () => {
 
     useEffect(() => {
         if (user) {
-            const url = `http://localhost:5000/mymatchs?email=${user.email}`;
+            const url = `https://powerful-wave-58652-26b956be3d84.herokuapp.com/mymatchs?email=${user.email}`;
             fetch(url)
                 .then(res => res.json())
                 .then(data => setMatchs(data));

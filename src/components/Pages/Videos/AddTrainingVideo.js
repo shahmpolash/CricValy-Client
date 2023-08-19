@@ -40,7 +40,7 @@ const AddTrainingVideo = () => {
       videoTitle,
     };
 
-    const url = 'http://localhost:5000/add-video';
+    const url = 'https://powerful-wave-58652-26b956be3d84.herokuapp.com/add-video';
     fetch(url, {
       method: 'POST',
       headers: {

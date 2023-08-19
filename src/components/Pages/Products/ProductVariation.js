@@ -6,7 +6,7 @@ const ProductVariation = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const url = "http://localhost:5000/categories";
+    const url = "https://powerful-wave-58652-26b956be3d84.herokuapp.com/categories";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setCategories(data));
@@ -24,7 +24,7 @@ const ProductVariation = () => {
       variationValue,
     };
 
-    const url = `http://localhost:5000/add-variation`;
+    const url = `https://powerful-wave-58652-26b956be3d84.herokuapp.com/add-variation`;
     fetch(url, {
       method: "POST",
       headers: {

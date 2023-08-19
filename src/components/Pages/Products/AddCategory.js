@@ -14,7 +14,7 @@ const AddCategory = () => {
     
     const newCategory = { categoryName };
 
-    const url = `http://localhost:5000/add-category`;
+    const url = `https://powerful-wave-58652-26b956be3d84.herokuapp.com/add-category`;
         fetch(url, {
           method: "POST",
           headers: {

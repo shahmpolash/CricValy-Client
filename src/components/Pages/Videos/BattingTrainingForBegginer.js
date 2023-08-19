@@ -6,7 +6,7 @@ const BattingTrainingForBegginer = () => {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
-    const url = `http://localhost:5000/videos`;
+    const url = `https://powerful-wave-58652-26b956be3d84.herokuapp.com/videos`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setVideos(data));

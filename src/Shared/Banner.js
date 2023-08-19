@@ -8,7 +8,7 @@ const Banner = () => {
   const [user] = useAuthState(auth)
   const [players, setPlayers] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/players`)
+    fetch(`https://powerful-wave-58652-26b956be3d84.herokuapp.com/players`)
       .then((res) => res.json())
       .then((info) => setPlayers(info));
   }, []);

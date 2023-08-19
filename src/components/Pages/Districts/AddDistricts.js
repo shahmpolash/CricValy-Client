@@ -12,7 +12,7 @@ const AddDistricts = () => {
     
         const newDistict = {districtName};
 
-        const url = `http://localhost:5000/district`;
+        const url = `https://powerful-wave-58652-26b956be3d84.herokuapp.com/district`;
         fetch(url, {
           method: "POST",
           headers: {

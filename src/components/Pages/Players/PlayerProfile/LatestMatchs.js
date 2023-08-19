@@ -13,19 +13,19 @@ const LatestMatchs = () => {
   const [isLoading, setIsLoading] = useState(false); // Added loading state
 
   useEffect(() => {
-    fetch(`http://localhost:5000/player/${id}`)
+    fetch(`https://powerful-wave-58652-26b956be3d84.herokuapp.com/player/${id}`)
       .then((res) => res.json())
       .then((info) => setPlayer(info));
   }, []);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/players`)
+    fetch(`https://powerful-wave-58652-26b956be3d84.herokuapp.com/players`)
       .then((res) => res.json())
       .then((info) => setPlayers(info));
   }, []);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/matches`)
+    fetch(`https://powerful-wave-58652-26b956be3d84.herokuapp.com/matches`)
       .then((res) => res.json())
       .then((info) => setMatches(info));
   }, []);
@@ -60,7 +60,7 @@ const LatestMatchs = () => {
       aganistTeam,
     };
 
-    const url = `http://localhost:5000/add-latest-match`;
+    const url = `https://powerful-wave-58652-26b956be3d84.herokuapp.com/add-latest-match`;
     fetch(url, {
       method: "POST",
       headers: {

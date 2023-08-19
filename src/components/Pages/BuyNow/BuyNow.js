@@ -12,7 +12,7 @@ const BuyNow = () => {
   const [isLoading, setIsLoading] = useState(false);
   
   useEffect(() => {
-    const url = `http://localhost:5000/variations`;
+    const url = `https://powerful-wave-58652-26b956be3d84.herokuapp.com/variations`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setVariations(data));
@@ -20,7 +20,7 @@ const BuyNow = () => {
   
 
   useEffect(() => {
-    const url = `http://localhost:5000/product/${id}`;
+    const url = `https://powerful-wave-58652-26b956be3d84.herokuapp.com/product/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setProduct(data));
@@ -47,7 +47,7 @@ const BuyNow = () => {
 
     const order = {productId, orderStatus, deliveryStatus, productName, productImage, paymentStatus, productPrice, productSize, productQnty, customerEmail, customerName, customerAddress, customerThanaName, customerDistrictName, customerPhoneNumber};
 
-    const url = `http://localhost:5000/new-order`;
+    const url = `https://powerful-wave-58652-26b956be3d84.herokuapp.com/new-order`;
     fetch(url, {
       method: "POST",
       headers: {

@@ -8,7 +8,7 @@ const Academies = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/academies`)
+    fetch(`https://powerful-wave-58652-26b956be3d84.herokuapp.com/academies`)
       .then((res) => res.json())
       .then((info) => {
         setAcademies(info);

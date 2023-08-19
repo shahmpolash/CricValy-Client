@@ -19,7 +19,7 @@ const RecentMatchs = () => {
 
         const matchInfo = {email, date, team, aganist, runs, faced, wickets, overs }
 
-        fetch('http://localhost:5000/matchinfo', {
+        fetch('https://powerful-wave-58652-26b956be3d84.herokuapp.com/matchinfo', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

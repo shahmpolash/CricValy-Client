@@ -15,7 +15,7 @@ const Dashboard = () => {
     const [records, setRecords] = useState([]);
     useEffect(() => {
         if (user) {
-            const url = `http://localhost:5000/profile?email=${user.email}`;
+            const url = `https://powerful-wave-58652-26b956be3d84.herokuapp.com/profile?email=${user.email}`;
             fetch(url)
                 .then(res => res.json())
                 .then(data => setRecords(data));

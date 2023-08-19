@@ -11,13 +11,13 @@ const Districts = () => {
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/districts`)
+    fetch(`https://powerful-wave-58652-26b956be3d84.herokuapp.com/districts`)
       .then((res) => res.json())
       .then((info) => setDistricts(info));
   }, []);
   
   useEffect(() => {
-    fetch(`http://localhost:5000/academies`)
+    fetch(`https://powerful-wave-58652-26b956be3d84.herokuapp.com/academies`)
       .then((res) => res.json())
       .then((info) => setAcademies(info));
   }, []);

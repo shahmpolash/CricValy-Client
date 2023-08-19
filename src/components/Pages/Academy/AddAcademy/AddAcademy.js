@@ -7,7 +7,7 @@ const AddAcademy = () => {
   const [districts, setDristricts] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/districts`)
+    fetch(`https://powerful-wave-58652-26b956be3d84.herokuapp.com/districts`)
       .then((res) => res.json())
       .then((info) => setDristricts(info));
   }, []);
@@ -60,7 +60,7 @@ const AddAcademy = () => {
         academyPhotoFour: academyPhotoFourUrl,
       };
 
-      const url = `http://localhost:5000/academy`;
+      const url = `https://powerful-wave-58652-26b956be3d84.herokuapp.com/academy`;
       const response = await fetch(url, {
         method: "POST",
         headers: {

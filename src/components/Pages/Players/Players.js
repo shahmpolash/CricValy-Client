@@ -8,7 +8,7 @@ const Players = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/players`)
+    fetch(`https://powerful-wave-58652-26b956be3d84.herokuapp.com/players`)
       .then((res) => res.json())
       .then((info) => {
         setPlayers(info);

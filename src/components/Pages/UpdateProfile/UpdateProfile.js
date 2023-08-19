@@ -12,14 +12,14 @@ const UpdateProfile = () => {
     const [player, setPlayer] = useState({});
 
     useEffect(() => {
-        const url = `http://localhost:5000/player/${id}`;
+        const url = `https://powerful-wave-58652-26b956be3d84.herokuapp.com/player/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setPlayer(data));
     }, []);
 
     const onSubmit = updatePlayer => {
-        const url = `http://localhost:5000/player/${id}`;
+        const url = `https://powerful-wave-58652-26b956be3d84.herokuapp.com/player/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
