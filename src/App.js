@@ -14,7 +14,6 @@ import AddToCart from './components/Pages/AddToCart/AddToCart';
 import Login from './components/Pages/Login/Login';
 import Register from './components/Pages/Register/Register';
 import MyOrders from './components/Pages/MyOrders/MyOrders';
-import TestCart from './components/Pages/AddToCart/TestCart';
 import BuyNow from './components/Pages/BuyNow/BuyNow';
 import AllOrders from './components/Pages/Admin/AllOrders';
 import OrderStatus from './components/Pages/Admin/OrderStatus';
@@ -50,6 +49,9 @@ import BowlingTrainingForBegginer from './components/Pages/Videos/BowlingTrainin
 import FieldingTrainingForBegginer from './components/Pages/Videos/FieldingTrainingForBegginer';
 import BowlingTrainingForIntermediate from './components/Pages/Videos/BowlingTrainingForIntermediate';
 import FieldingTrainingForIntermediate from './components/Pages/Videos/FieldingTrainingForIntermediate';
+import ThankYou from './components/Pages/BuyNow/ThankYou';
+import Products from './components/Pages/Products/Products';
+import UpdateNews from './components/Pages/UpdateNews';
 
 
 function App() {
@@ -78,6 +80,7 @@ function App() {
         <Route path='/videos' element ={<Videos></Videos>}></Route>
         <Route path='/video/:id' element ={<Video></Video>}></Route>
         <Route path='/players' element ={<AllPlayers></AllPlayers>}></Route>
+        <Route path='/update-news' element ={<UpdateNews></UpdateNews>}></Route>
         <Route path='/training' element ={<Training></Training>}></Route>
         <Route path='/begginer' element ={<BegginerVideos></BegginerVideos>}></Route>
         <Route path='/batting-begginer' element ={<BattingTrainingForBegginer></BattingTrainingForBegginer>}></Route>
@@ -91,8 +94,9 @@ function App() {
 
 
         <Route path='/cart' element ={<RequireAuth><AddToCart></AddToCart></RequireAuth>}></Route>
+        <Route path='/shop' element ={<Products></Products>}></Route>
         <Route path='/buy-now/:id' element ={<RequireAuth><BuyNow></BuyNow></RequireAuth>}></Route>
-        <Route path='/test' element ={<RequireAuth><TestCart></TestCart></RequireAuth>}></Route>
+        <Route path='/thank-you' element ={<RequireAuth><ThankYou></ThankYou></RequireAuth>}></Route>
         <Route path='/my-orders' element ={<RequireAuth><MyOrders></MyOrders></RequireAuth>}></Route>
 
         

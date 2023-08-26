@@ -36,6 +36,7 @@ const AddAcademy = () => {
     const academyPhoneNumber = event.target.academyPhoneNumber.value;
     const practiceDate = event.target.practiceDate.value;
     const practiceTime = event.target.practiceTime.value;
+    const aboutAcademy = event.target.aboutAcademy.value;
 
     try {
       const coverPhotoUrl = await uploadImageToImgBB(event.target.academyCoverPhoto.files[0]);
@@ -54,6 +55,7 @@ const AddAcademy = () => {
         academyPhoneNumber,
         practiceDate,
         practiceTime,
+        aboutAcademy,
         academyPhotoOne: academyPhotoOneUrl,
         academyPhotoTwo: academyPhotoTwoUrl,
         academyPhotoThree: academyPhotoThreeUrl,
@@ -187,6 +189,14 @@ const AddAcademy = () => {
             name="academyPhotoFour"
             placeholder="Photo Four"
           ></input>{" "}
+          <br />
+        </li>
+        <li class="single-form-item">
+          <textarea
+            type="text"
+            name="aboutAcademy"
+            placeholder="About Academy"
+          ></textarea>{" "}
           <br />
         </li>
         <li class="single-form-item">

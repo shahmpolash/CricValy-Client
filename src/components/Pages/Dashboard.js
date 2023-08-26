@@ -273,6 +273,7 @@ const Dashboard = () => {
       <table id="customers">
                 <tr>
                   <th>Product</th>
+                  <th>Qnty</th>
                   <th>Amount</th>
                   <th>Order Status</th>
                   <th>Delivery Status</th>
@@ -281,6 +282,7 @@ const Dashboard = () => {
                     orders.map(order=> order.customerEmail === user?.email &&
                       <tr>
                         <td>{order.productName}</td>
+                        <td>{order.productQnty}</td>
                         <td>{order.productPrice} Tk</td>
                         <td>{order.orderStatus}</td>
                         <td>{order.deliveryStatus}</td>

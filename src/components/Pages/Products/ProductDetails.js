@@ -38,45 +38,12 @@ const ProductDetails = () => {
                         src={product.productImage}
                         alt="product Img"
                       />
-
-                      <div class="image-shape image-shape-1"></div>
-                      <div class="image-shape image-shape-2"></div>
                     </div>
                     <ul>
                     <li className="single-form-item price btn btn--block btn--radius btn--size-xlarge btn--color-white btn--bg-maya-blue text-center contact-btn">
-                    <Button className="">Price: Tk {product.productPrice}</Button>
+                    <Link to={`/buy-now/${product._id}`} className="">Price: Tk {product.productPrice}</Link>
                     </li>
                     </ul>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="product-gallery-single-item">
-                    <div class="image">
-                      <img
-                        class="img-fluid"
-                        width="276"
-                        height="172"
-                        src="assets/images/product/single/product-gallery-single-1.png"
-                        alt=""
-                      />
-                      <div class="image-shape image-shape-1"></div>
-                      <div class="image-shape image-shape-2"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div class="product-gallery-single-item">
-                    <div class="image">
-                      <img
-                        class="img-fluid"
-                        width="276"
-                        height="172"
-                        src="assets/images/product/single/product-gallery-single-1.png"
-                        alt=""
-                      />
-                      <div class="image-shape image-shape-1"></div>
-                      <div class="image-shape image-shape-2"></div>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -88,9 +55,27 @@ const ProductDetails = () => {
         <div class="container px-0">
           <div class="product-gallery-details">
             <h1 class="title">{product.productName}</h1>
-            <>{product.productDetails} Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo excepturi delectus blanditiis ex libero ipsum iste vitae tenetur nesciunt id. Illum minus voluptates enim ducimus repellat unde dignissimos reiciendis perspiciatis nobis atque? Optio omnis eaque vel, unde veritatis ullam quaerat aliquam nam vero, quibusdam, excepturi architecto rem maxime? Quo, quis?</>
+            <div className="product-short">{product.productShortDetails}</div>
+            <div class="image product-details-image">
+                      <img
+                        class="img-fluid"
+                        width="276"
+                        height="172"
+                        src={product.productImageTwo}
+                        alt="product Img"
+                      />
+                    </div>
+            <div className="product-details">{product.productLongDetails}</div>
+            <div class="image product-details-image">
+                      <img
+                        class="img-fluid"
+                        width="276"
+                        height="172"
+                        src={product.productImageThree}
+                        alt="product Img"
+                      />
+                    </div>
 
-            
               <ul>
                 <li class="single-form-item">
                   <Link to={`/buy-now/${product._id}`} className="btn btn--block btn--radius btn--size-xlarge btn--color-white btn--bg-maya-blue text-center contact-btn">Buy Now</Link>

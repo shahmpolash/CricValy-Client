@@ -39,8 +39,8 @@ const AllOrders = () => {
                           <span className="brand">{order.orderStatus}</span>
                           <span className="price">
                             Tk.{" "}
-                            {parseFloat(order.productPrice) *
-                              parseFloat(order.productQnty)}
+                            {order.productPrice}
+                             
                           </span>
                         </div>
                         <div className="right">

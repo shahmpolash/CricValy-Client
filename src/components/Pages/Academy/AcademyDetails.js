@@ -90,7 +90,7 @@ const AcademyDetails = () => {
         <h1>About</h1>
       </div>
       <div className="center-position about-academy">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, voluptatum autem explicabo sint, perferendis impedit saepe, veniam provident dicta vitae voluptate repellendus labore accusantium optio nobis enim? Officiis, recusandae at.</p>
+        <p>{academy.aboutAcademy}</p>
       </div>
     </div>
   );

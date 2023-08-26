@@ -5,3 +5,16 @@
     border: 10px solid rgb(76, 144, 245);
     padding: 10px;
 }
+
+.product-details-image img{
+    width: 300px !important;
+    height: 250px !important;
+}
+.product-details{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.product-short{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
