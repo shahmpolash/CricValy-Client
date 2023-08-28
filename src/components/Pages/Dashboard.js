@@ -1,39 +1,61 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import { signOut } from 'firebase/auth';
 import auth from "../../firebase.init";
 import "./Dashboard.css";
-import { signOut } from 'firebase/auth';
+import LiveScore from "./LiveScore";
 
 const Dashboard = () => {
   const [user] = useAuthState(auth);
   const [players, setPlayers] = useState([]);
   const [matches, setMatches] = useState([]);
   const [orders, setOrders] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 5;
+
   const logout = () => {
     signOut(auth);
   };
 
-
   useEffect(() => {
-    const url = `https://powerful-wave-58652-26b956be3d84.herokuapp.com/matches`;
+    const url = "https://powerful-wave-58652-26b956be3d84.herokuapp.com/matches";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setMatches(data));
   }, []);
 
   useEffect(() => {
-    const url = `https://powerful-wave-58652-26b956be3d84.herokuapp.com/orders`;
+    const url = "https://powerful-wave-58652-26b956be3d84.herokuapp.com/orders";
     fetch(url)
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, []);
 
   useEffect(() => {
-    fetch(`https://powerful-wave-58652-26b956be3d84.herokuapp.com/players`)
+    fetch("https://powerful-wave-58652-26b956be3d84.herokuapp.com/players")
       .then((res) => res.json())
       .then((info) => setPlayers(info));
   }, []);
+
+  const totalOrders = orders.filter(order => order.customerEmail === user?.email);
+  const totalPages = Math.ceil(totalOrders.length / itemsPerPage);
+
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const ordersToDisplay = totalOrders.slice(startIndex, endIndex);
+
+  const goToNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const goToPreviousPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
 
   return (
     <div>
@@ -271,27 +293,46 @@ const Dashboard = () => {
         <h1>My Orders</h1>
       </div>
       <table id="customers">
-                <tr>
-                  <th>Product</th>
-                  <th>Qnty</th>
-                  <th>Amount</th>
-                  <th>Order Status</th>
-                  <th>Delivery Status</th>
-                </tr>
-                {
-                    orders.map(order=> order.customerEmail === user?.email &&
-                      <tr>
-                        <td>{order.productName}</td>
-                        <td>{order.productQnty}</td>
-                        <td>{order.productPrice} Tk</td>
-                        <td>{order.orderStatus}</td>
-                        <td>{order.deliveryStatus}</td>
-                      </tr>)
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Qnty</th>
+            <th>Amount</th>
+            <th>Order Status</th>
+            <th>Delivery Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {ordersToDisplay.map((order, index) => (
+            <tr key={index}>
+              <td>{order.productName}</td>
+              <td>{order.productQnty}</td>
+              <td>{order.productPrice} Tk</td>
+              <td>{order.orderStatus}</td>
+              <td>{order.deliveryStatus}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
 
-                    
-                  }
-              </table>
-
+      <div className="pagination">
+  <button
+    className="pagination-button"
+    onClick={goToPreviousPage}
+    disabled={currentPage === 1}
+  >
+    Previous
+  </button>
+  <span>Page {currentPage} of {totalPages}</span>
+  <button
+    className="pagination-button"
+    onClick={goToNextPage}
+    disabled={currentPage === totalPages}
+  >
+    Next
+  </button>
+  
+</div>
        <div class="single-form-item">
         <input
           className="btn btn--block btn--radius btn--size-xlarge btn--color-white btn--bg-maya-blue text-center contact-btn"

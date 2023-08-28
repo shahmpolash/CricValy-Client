@@ -34,6 +34,9 @@ const AddAcademy = () => {
     const academyName = event.target.academyName.value;
     const academyAddress = event.target.academyAddress.value;
     const academyPhoneNumber = event.target.academyPhoneNumber.value;
+    const coachName = event.target.coachName.value;
+    const admissionFee = event.target.admissionFee.value;
+    const monthlyFee = event.target.monthlyFee.value;
     const practiceDate = event.target.practiceDate.value;
     const practiceTime = event.target.practiceTime.value;
     const aboutAcademy = event.target.aboutAcademy.value;
@@ -55,6 +58,9 @@ const AddAcademy = () => {
         academyPhoneNumber,
         practiceDate,
         practiceTime,
+        coachName,
+        admissionFee,
+        monthlyFee,
         aboutAcademy,
         academyPhotoOne: academyPhotoOneUrl,
         academyPhotoTwo: academyPhotoTwoUrl,
@@ -153,6 +159,30 @@ const AddAcademy = () => {
             type="text"
             name="practiceTime"
             placeholder="Practice Time: 8am - 11am"
+          ></input>{" "}
+          <br />
+        </li>
+        <li class="single-form-item">
+          <input
+            type="text"
+            name="coachName"
+            placeholder="Coach Name"
+          ></input>{" "}
+          <br />
+        </li>
+        <li class="single-form-item">
+          <input
+            type="number"
+            name="admissionFee"
+            placeholder="Admission Fee"
+          ></input>{" "}
+          <br />
+        </li>
+        <li class="single-form-item">
+          <input
+            type="number"
+            name="monthlyFee"
+            placeholder="Monthly Fee"
           ></input>{" "}
           <br />
         </li>

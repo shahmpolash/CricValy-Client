@@ -1,34 +1,63 @@
-.academy-profile img{
-    border-radius: 40px;
+/* AcademyDetails.css */
+.academy-profile img {
+    border-radius: 50%;
     border: 5px solid skyblue;
-}
-.practice-time{
-    margin-left: 10px;
-    margin-right: 10px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.academy-card-one{
-
-    margin-left: 10px;
-    margin-right: 10px;
-    border-radius: 10px;
-    background: rgb(131,58,180);
-    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(156,29,253,1) 38%, rgba(252,176,69,1) 100%); 
-    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .practice-time,
+  .phone-number,
+  .address {
     display: flex;
     justify-content: center;
-}
-.academy-card-one h3{
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+  
+  .phone-number p,
+  .address p,
+  .practice-time p {
+    font-size: 16px;
+    margin-left: 10px;
+    color: #333;
+  }
+  
+  .practice-time img,
+  .phone-number img,
+  .address img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  .academy-card-one {
+    margin: 10px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(156, 29, 253, 1) 38%, rgba(252, 176, 69, 1) 100%);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .academy-card-one h3 {
     color: white;
-}
-.academy-card-one img{
+    margin-top: 10px;
+  }
+  
+  .academy-card-one img {
     border-radius: 30px;
     border: 5px solid wheat;
-}
-.practice-date{
-    margin-top: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .practice-date {
+    margin-top: 20px;
     margin-left: 20px;
     margin-right: 20px;
     padding: 20px;
@@ -36,76 +65,40 @@
     border-radius: 10px;
     display: flex;
     justify-content: center;
-}
-
-.practice-date h2, p{
+    align-items: center;
+    text-align: center;
+  }
+  
+  .practice-date h2,
+  .practice-date p {
     color: white;
     font-weight: 400;
-}
-.center-position{
+  }
+  
+  .center-position {
     display: flex;
     justify-content: center;
-}
-.academy-name h1{
-    color:rgb(62, 62, 243);
+    align-items: center;
+  }
+  
+  .academy-name h1,
+  .about h1 {
+    color: #3e3ef3;
     font-weight: 600;
-}
-.about h1{
-    color:rgb(62, 62, 243);
-    font-weight: 600;
-}
-.about-academy p{
-    color: rgb(24, 24, 24);
-}
-
-.phone-number{
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-    padding: 20px;
-    box-shadow:  rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    border-radius: 10px;
-}
-.address{
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-    box-shadow:  rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    border-radius: 10px;
-}
-.practice-time{
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-    box-shadow:  rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    border-radius: 10px;
-}
-.phone-number p{
-    font-size: 18px;
-    margin-left: 10px;
-    color: black;
-}
-.address p{
-    margin-left: 10px;
-    color: black;
-}
-.phone-number img{
-    width: 50px;
-}
-.address img{
-    width: 50px;
-}
-.practice-time img{
-    width: 50px;
-}
-.practice-time p{
-    font-size: 18px;
-    margin-left: 10px;
-    color: black;
-}
-.academy-photos img{
+    text-align: center;
+  }
+  
+  .about-academy p {
+    color: #181818;
+    line-height: 1.6;
+    text-align: center;
+  }
+  
+  .academy-photos img {
     width: 100%;
     margin-bottom: 10px;
     border: 2px solid blue;
     border-radius: 10px;
-}
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  

@@ -24,7 +24,7 @@ const Cards = () => {
                 </Link>
               </div>
               <div className="text">
-                <p>Add Profile</p>
+                <p>Set Profile</p>
               </div>
             </div>
             <div className="single">

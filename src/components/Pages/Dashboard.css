@@ -143,3 +143,17 @@
   .my-orders h1{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
   }
+  .pagination-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    margin: 0 5px;
+    font-size: 14px;
+  }
+  
+  .pagination-button:hover {
+    background-color: #0056b3;
+  }

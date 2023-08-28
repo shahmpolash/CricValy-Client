@@ -57,26 +57,64 @@ const AcademyDetails = () => {
       <div className="center-position academy-name">
         <h1>{academy.academyName}</h1>
       </div>
-      <div>
-        <div className="address-phone">
-
-          <div className="address">
+      <table id="customers">
+        <tr>
+          <th><h2>Address</h2></th>
+        </tr>
+        <tr>
+          <td><div className="address">
             <img src="https://i.ibb.co/jWfXQCf/map.png"></img>
-            <p>House 18, Road 13, Ground Field yaha Road. rajshahi</p>
-          </div>
-
-          <div className="phone-number">
+            <p>{academy.academyAddress}</p>
+          </div></td>
+        </tr>
+      </table>
+      <table id="customers">
+        <tr>
+          <th><h2>Phone Number</h2></th>
+        </tr>
+        <tr>
+          <td><div className="phone-number">
           <img src="https://i.ibb.co/qpr5Lmq/phone-call.png"></img>
             <p>Phone Number: <br></br>{academy.academyPhoneNumber}</p>
-          </div>
-
-          <div className="practice-time">
+          </div></td>
+        </tr>
+      </table>
+      <table id="customers">
+        <tr>
+          <th><h2>Practice Time</h2></th>
+        </tr>
+        <tr>
+          <td><div className="practice-time">
           <img src="https://i.ibb.co/DfVgb7D/cricket.png"></img>
             <p>Practice Time: <br></br>{academy.practiceTime}</p>
+          </div></td>
+        </tr>
+      </table>
+      <table id="customers">
+        <tr>
+          <th><h2>Admission Fee</h2></th>
+        </tr>
+        <tr>
+          <td>
+            <div className="practice-time">
+            <p>{academy.admissionFee} Taka</p>
           </div>
-          
-        </div>
-      </div>
+          </td>
+        </tr>
+      </table>
+      <table id="customers">
+        <tr>
+          <th><h2>Monthly Fee</h2></th>
+        </tr>
+        <tr>
+          <td>
+            <div className="practice-time">
+            <p>{academy.monthlyFee} Taka</p>
+          </div>
+          </td>
+        </tr>
+      </table>
+
       <div>
      
       </div>

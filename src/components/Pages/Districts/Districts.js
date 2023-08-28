@@ -9,6 +9,7 @@ const Districts = () => {
   const [districts, setDistricts] = useState([]);
   const [academies, setAcademies] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     fetch(`https://powerful-wave-58652-26b956be3d84.herokuapp.com/districts`)
@@ -29,6 +30,10 @@ const Districts = () => {
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
+
+  const filteredAcademies = academies.filter(academy =>
+    academy.academyName.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   let pageNumbers = [];
   if (totalPages <= MAX_PAGE_NUMBERS) {
@@ -52,11 +57,20 @@ const Districts = () => {
       <div className="heading-academy">
         <h1>Find Your Best Academy from Your District</h1>
       </div>
+      <div className="search-box">
+          <input
+            type="text"
+            placeholder="Search Academy Name"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </div>
       <div className="district-all-cards">
+        
         <div className="district-cards">
           <>
             {districts.map(district =>
-              <div className="district-single">
+              <div className="district-single" key={district._id}>
                 <div className="district-card-one">
                   <Link className="btn" to={`/academies/${district._id}`}>
                     <img src="https://i.ibb.co/mG64sk9/academy-cri.png" alt="" />
@@ -74,11 +88,13 @@ const Districts = () => {
           <h2 className="title">Academies</h2>
         </div>
 
+        
+
         <div className="academy-cards-all-cards">
           <div className="academy-cards">
             <>
-              {academies.slice(startIndex, endIndex).map(academy =>
-                <div className="academy-cards-single">
+              {filteredAcademies.slice(startIndex, endIndex).map(academy =>
+                <div className="academy-cards-single" key={academy._id}>
                   <div className="academy-cards-card-one">
                     <Link className="btn" to={`/academy/${academy._id}`}>
                       <img src={academy.academyProfilePhoto} alt="" />
