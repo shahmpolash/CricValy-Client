@@ -3,6 +3,7 @@ import banner from '../images/banner-img.jpg';
 import './Banner.css';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../firebase.init';
+import { Link } from 'react-router-dom';
 
 const Banner = () => {
   const [user] = useAuthState(auth)
@@ -48,7 +49,7 @@ const Banner = () => {
                           }
                           {
                             players.filter(player => player.playerEmail === user?.email).length === 0 &&
-                            <h1>Update  Profile</h1>
+                            <Link to="/add-profile"><h3>Create Profile Now</h3></Link>
                             
                           }
                          
